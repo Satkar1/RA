@@ -2,6 +2,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '../../utils/supabaseClient';
 import { User } from '../../types';
 
+const { data: newUser, error } = await supabase
+  .from<User>('users')
+  .insert([{ username, email, password }])
+  .single();
 
 export default async function handler(
   req: NextApiRequest,
@@ -127,4 +131,5 @@ async function handleGetUser(req: NextApiRequest, res: NextApiResponse) {
   }
 
 }
+
 
