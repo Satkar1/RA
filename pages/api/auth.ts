@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '../../utils/supabaseClient';
+import { User } from '../../types';
 
 
 export default async function handler(
@@ -126,3 +127,4 @@ async function handleGetUser(req: NextApiRequest, res: NextApiResponse) {
   }
 
 }
+
