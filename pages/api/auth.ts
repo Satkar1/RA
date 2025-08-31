@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '../../../utils/supabaseClient';
+import { supabase } from '../../utils/supabaseClient';
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -123,4 +124,5 @@ async function handleGetUser(req: NextApiRequest, res: NextApiResponse) {
     console.error('Get user error:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
+
 }
